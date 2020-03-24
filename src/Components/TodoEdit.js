@@ -103,4 +103,6 @@ const Button = styled.button`
     margin: 1rem auto;
     padding: 0.5rem 1rem;
     font-size: 1rem;
+
 `
+

@@ -21,7 +21,7 @@ const Modal = ({children, ...rest}) => {
             <div
                 style={{
                     "backgroundColor":"#fefefe",
-                    "margin":"30% auto 0 auto",
+                    "margin":"40% auto 0 auto",
                     "padding":"20px",
                     "border":"1px solid #888",
                     "width":"80%"

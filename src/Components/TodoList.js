@@ -4,7 +4,7 @@ import Todo from './Todo'
 
 
 const TodoList = (props) => {
-
+    console.log(props.todoList)
     return (
         <div>
             {props.todoList.map((todo, index) => (
@@ -14,6 +14,7 @@ const TodoList = (props) => {
                     description={todo.description}
                     id={todo._id}
                     handleTodoListChange={props.handleTodoListChange}
+                    updatedAt={todo.updatedAt}
                 />
             ))}
         </div>

@@ -26,20 +26,26 @@ const ConfirmDelete = (props) => {
 
     return (
         <div>
-            <ConfirmContainer>
+            <DeleteTitle> Do you want to Delete - {props.title} ?</DeleteTitle>
+            <ButtonConfirmContainer>
                 <Button onClick={props.handleCloseConfirmDelete}>Cancel</Button>
                 <Button onClick={handleDeleteTodo}>Delete</Button>
-            </ConfirmContainer>
+            </ButtonConfirmContainer>
         </div>
     )
 }
 
 export default ConfirmDelete
 
-const ConfirmContainer = styled.div`
-    display: flex;
-
+const DeleteTitle = styled.div`
+    font-size: 1.5rem;
+    margin: 1rem auto;
 `
+
+const ButtonConfirmContainer = styled.div`
+    display: flex;
+`
+
 const Button = styled.button`
     margin: 1rem auto;
     padding: 0.5rem 1rem;

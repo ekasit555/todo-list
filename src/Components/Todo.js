@@ -6,7 +6,7 @@ import ConfirmDelete from "../Components/ConfirmDelete"
 import styled from 'styled-components'
 import { colorTheme } from '../Utils/Constants'
 
-const Todo = ({ title, description, id, handleTodoListChange }) => {
+const Todo = ({ title, description, id, updatedAt, handleTodoListChange }) => {
     const [openEdit, setOpenEdit] = useState(false)
     const [openConfirmDelete, setOpenConfirmDelete] = useState(false)
 
@@ -30,8 +30,9 @@ const Todo = ({ title, description, id, handleTodoListChange }) => {
         <div>
             <ListContainer>
                 <div style={{width: '60%'}}>
-                    <Title>{title}</Title>
+                    <Title>{title}</Title> 
                     <Description readonly>{description}</Description>
+                    <CreatedAt>create at : {updatedAt.slice(0, 10)}, {updatedAt.slice(11, 16)}</CreatedAt>
                 </div>
                 <div style={{marginLeft: 'auto'}}>
                     <Button onClick={handleOpenEdit}>Edit</Button>
@@ -56,6 +57,7 @@ const Todo = ({ title, description, id, handleTodoListChange }) => {
             >
                 <ConfirmDelete
                     id={id}
+                    title={title}
                     handleTodoListChange={handleTodoListChange}
                     handleCloseConfirmDelete={handleCloseConfirmDelete}
                 />
@@ -92,6 +94,14 @@ const Description = styled.div`
     font-weight: 500;
     margin-bottom: 6px;
     word-wrap: break-word;
+    white-space: pre-wrap;
+    overflow: auto;
+`
+
+const CreatedAt = styled.div`
+    font-size: 1rem;
+    margin-bottom: 6px;
+    color: gray
 `
 const Button = styled.button`
     margin: 1rem auto;
