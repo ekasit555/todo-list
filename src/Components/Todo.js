@@ -29,11 +29,11 @@ const Todo = ({ title, description, id, handleTodoListChange }) => {
     return (
         <div>
             <ListContainer>
-                <div>
+                <div style={{width: '60%'}}>
                     <Title>{title}</Title>
-                    <div>{description}</div>
+                    <Description readonly>{description}</Description>
                 </div>
-                <div>
+                <div style={{marginLeft: 'auto'}}>
                     <Button onClick={handleOpenEdit}>Edit</Button>
                     <Button onClick={handleOpenConfirmDelete}>Delete</Button>
                 </div>
@@ -78,15 +78,21 @@ const ListContainer = styled.div`
     border-radius: 3px;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+
 `
 
 const Title = styled.div`
     font-size: 1.5rem;
     font-weight: 800;
     margin-bottom: 6px;
+    word-wrap: break-word;
 `
-
+const Description = styled.div`
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin-bottom: 6px;
+    word-wrap: break-word;
+`
 const Button = styled.button`
     margin: 1rem auto;
     padding: 0.5rem 1rem;

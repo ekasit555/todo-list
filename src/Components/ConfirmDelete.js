@@ -1,5 +1,7 @@
 import React, { useState, useEffect, useReducer } from 'react'
 import ServiceAxios from '../Utils/AxiosService'
+import styled from 'styled-components'
+import { colorTheme } from '../Utils/Constants'
 
 const ConfirmDelete = (props) => {
     const axiosInstance = new ServiceAxios()
@@ -24,12 +26,23 @@ const ConfirmDelete = (props) => {
 
     return (
         <div>
-            <div>
-                <button onClick={props.handleCloseConfirmDelete}>Cancel</button>
-                <button onClick={handleDeleteTodo}>Delete</button>
-            </div>
+            <ConfirmContainer>
+                <Button onClick={props.handleCloseConfirmDelete}>Cancel</Button>
+                <Button onClick={handleDeleteTodo}>Delete</Button>
+            </ConfirmContainer>
         </div>
     )
 }
 
 export default ConfirmDelete
+
+const ConfirmContainer = styled.div`
+    display: flex;
+
+`
+const Button = styled.button`
+    margin: 1rem auto;
+    padding: 0.5rem 1rem;
+    font-size: 1.5rem;
+    flex: 1
+`

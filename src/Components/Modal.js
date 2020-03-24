@@ -9,8 +9,9 @@ const Modal = ({children, ...rest}) => {
                 "display": props.openModal ? "block": "none", 
                 "position": "fixed", 
                 "zIndex": "1", 
-                "left": "0", "top": 
-                "0", "width": "100%", 
+                "left": "0", 
+                "top": "0", 
+                "width": "100%", 
                 "height": "100%", 
                 "overflow": "auto", 
                 "backgroundColor": "rgba(0,0,0,0.4)" 
@@ -20,7 +21,7 @@ const Modal = ({children, ...rest}) => {
             <div
                 style={{
                     "backgroundColor":"#fefefe",
-                    "margin":"15% auto",
+                    "margin":"30% auto 0 auto",
                     "padding":"20px",
                     "border":"1px solid #888",
                     "width":"80%"
